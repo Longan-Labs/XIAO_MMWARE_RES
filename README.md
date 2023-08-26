@@ -30,14 +30,14 @@ In summary, whether you're a DIY enthusiast, a business in need of a customized 
 
 - **Modular Design**: The kit employs the Grove system, allowing users to easily add or swap functional modules.
 - **Multi-Protocol Support**: The XIAO ESP32C3 supports multiple communication protocols such as MQTT and HTTP, facilitating interaction with other IoT devices or services.
-- **High-Precision Human Detection**: The 24GHz mmWave Sensor can accurately detect human presence within a maximum range of 30 meters.
+- **High-Precision Human Detection**: The 24GHz mmWave Sensor can accurately detect human presence within a maximum range of 5 meters.
 - **Stable Data Processing**: The XIAO ESP32C3 microcontroller, with its 400KB SRAM and robust processing capabilities, ensures stable and reliable data processing.
 - **Plug-and-Play**: All components are plug-and-play, eliminating the need for complex setups.
 
 ## Specification
 
 - **24GHz mmWave Sensor**
-  - Detection Range: Up to 30 meters
+  - Detection Range: Up to 5 meters
   - Operating Frequency: 24GHz
   - Output Interface: I2C
   
@@ -49,7 +49,7 @@ In summary, whether you're a DIY enthusiast, a business in need of a customized 
   
 - **Grove System**
   - Interface Types: Digital, Analog, I2C, UART
-  - Power Requirements: 3.3V or 5V
+  - Power Output: 3.3V (You can only use the 3.3V Grove module)
 
 - **Additional Accessories**
   - USB Cable Length: 1.2 meters
@@ -125,6 +125,7 @@ This section aims to quickly guide you through the initial setup and basic usage
 
 HumanStaticLite radar = HumanStaticLite(&Serial1);
 const int pinPwrCtrl  = D6;
+
 void setup() {
   Serial.begin(115200);
   Serial1.begin(115200, SERIAL_8N1, D3, D2);    // init the Serial1
