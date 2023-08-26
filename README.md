@@ -97,7 +97,7 @@ The Human Detection Sensor Kit is versatile and can be adapted for various appli
 
 ## Getting Started
 
-This "Getting Started" section aims to quickly guide you through the initial setup and basic usage of the Human Detection Sensor Kit. The circuit board of the kit comes pre-soldered with a XIAO ESP32 C3 microcontroller and a 24GHz mmWave sensor. Due to the comprehensive documentation already available for the XIAO ESP32 C3 and 24GHz mmWave Sensor, this section will provide only a brief overview.
+This section aims to quickly guide you through the initial setup and basic usage of the Human Detection Sensor Kit. The circuit board of the kit comes pre-soldered with a XIAO ESP32 C3 microcontroller and a 24GHz mmWave sensor. Due to the comprehensive documentation already available for the XIAO ESP32 C3 and 24GHz mmWave Sensor, this section will provide only a brief overview.
 
 ### How to Start
 
@@ -110,16 +110,51 @@ This "Getting Started" section aims to quickly guide you through the initial set
 - Make sure you have the Arduino IDE installed on your computer.
 - Ensure a stable connection between the circuit board and your computer before proceeding with any programming.
 
+### Programming Considerations
+
+1. **Power Control for 24GHz mmWave Sensor**: To conserve power, we've added a switch to control the power supply to the 24GHz mmWave Sensor. You can control it via the D6 pin on the XIAO ESP32 C3. To turn the sensor on, include `digitalWrite(D6, HIGH)` in your code. To turn it off, use `digitalWrite(D6, LOW)`.
+
+2. **Serial Communication**: The D2 pin of the XIAO ESP32C3 is connected as TX to the RX of the 24GHz mmWave Sensor, and the D3 pin is connected as RX to the TX of the sensor. Therefore, include the following in your `setup()` function:  
+   `Serial1.begin(115200, SERIAL_8N1, D3, D2);`
+
+3. **Example Code**: Below is a simple example that you can also find in the 24GHz mmWave Sensor's Wiki. Due to the points mentioned above, the code will have some differences.
+
+```arduino
+#include "Arduino.h"
+#include <humanstaticLite.h>
+
+HumanStaticLite radar = HumanStaticLite(&Serial1);
+const int pinPwrCtrl  = D6;
+void setup() {
+  Serial.begin(115200);
+  Serial1.begin(115200, SERIAL_8N1, D3, D2);    // init the Serial1
+  pinMode(pinPwrCtrl, OUTPUT);
+  
+  digitalWrite(pinPwrCtrl, HIGH);           // Open power to the mmWare sensor
+
+  while(!Serial);
+  Serial.println("Ready");
+}
+
+void loop() {
+  radar.recvRadarBytes();
+  radar.showData();
+  delay(200);
+}
+```
+
+For all code related to the 24GHz mmWave Sensor, you will need to make similar modifications as shown in the example code above.
+
 ## Schematic Online Viewer
 
-<div className="altium-ecad-viewer" data-project-src="https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip" style={{borderRadius: '0px 0px 4px 4px', height: 500, borderStyle: 'solid', borderWidth: 1, borderColor: 'rgb(241, 241, 241)', overflow: 'hidden', maxWidth: 1280, maxHeight: 700, boxSizing: 'border-box'}}>
+<div className="altium-ecad-viewer" data-project-src="https://github.com/Longan-Labs/XIAO_MMWARE_RES/raw/main/Human_Detection_Sensor_Board.zip" style={{borderRadius: '0px 0px 4px 4px', height: 500, borderStyle: 'solid', borderWidth: 1, borderColor: 'rgb(241, 241, 241)', overflow: 'hidden', maxWidth: 1280, maxHeight: 700, boxSizing: 'border-box'}}>
 </div>
 
 ## Resources
 
-- **[Zip]** [Grove - D7S Vibration Sensor](https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip)
-- **[PDF]** [D7S Datasheet](https://github.com/Longan-Labs/D7S_SENSOR_RES/blob/main/en-d7s-957666.pdf)
-- **[GITHUB]** [D7S Arduino Library](https://github.com/Longan-Labs/d7s-grove-arduino)
+- [Eagle File](https://github.com/Longan-Labs/XIAO_MMWARE_RES/raw/main/Human_Detection_Sensor_Board.zip)
+- [Wiki for XIAO ESP32 C3](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/)
+- [Wiki for 24GHz mmWare Sensor](https://wiki.seeedstudio.com/Radar_MR24HPC1/)
 
 ## Tech Support
 If you have any technical issue.  submit the issue into our [forum](https://forum.seeedstudio.com/).
