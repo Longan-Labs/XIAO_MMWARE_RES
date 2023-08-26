@@ -12,7 +12,7 @@ last_update:
 
 
 <!-- ![](https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/img/IMG_0012a.jpg) -->
-  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/main.jpg" alt="pir" width={600} height="auto" /></p>
+  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/XIAO_MMWARE_RES/main/images/5-Human-Detection-Sensor-Kit-45feature.jpg" alt="pir" width={600} height="auto" /></p>
 
 The Human Detection Sensor Kit is more than just a hardware bundle; it's a comprehensive solution for human detection that integrates a variety of advanced technologies and modules. At the heart of this kit are three core components: a 24GHz mmWave Sensor, a XIAO ESP32C3 microcontroller board, and a set of Grove system interfaces. Together, these elements form a highly flexible and scalable platform designed to meet a diverse range of human detection needs.
 
@@ -28,35 +28,73 @@ In summary, whether you're a DIY enthusiast, a business in need of a customized 
 
 ## Features
 
-- High-Precision Accelerometer: Equipped with a three-axis accelerometer, the sensor provides accurate measurements of vibrations and seismic activity.
-- Real-Time Earthquake Detection: The Grove - D7S Vibration Sensor uses advanced algorithms to detect and classify seismic events in real time. It can differentiate between different magnitudes of earthquakes and provide corresponding alert signals.
-- Easy Integration with Grove System: The sensor features a Grove-compatible interface, allowing for easy connection to Arduino boards and other compatible platforms. No complex wiring or soldering is required, making it accessible to users of all skill levels.
-- Compact and Robust Design: The Grove - D7S Vibration Sensor has a compact form factor, making it suitable for various applications where space is limited. Its robust construction ensures durability and reliable performance, even in harsh environments.
-- Low Power Consumption: The sensor is designed to operate with low power consumption, making it suitable for long-term monitoring applications without draining the power source quickly.
+- **Modular Design**: The kit employs the Grove system, allowing users to easily add or swap functional modules.
+- **Multi-Protocol Support**: The XIAO ESP32C3 supports multiple communication protocols such as MQTT and HTTP, facilitating interaction with other IoT devices or services.
+- **High-Precision Human Detection**: The 24GHz mmWave Sensor can accurately detect human presence within a maximum range of 30 meters.
+- **Stable Data Processing**: The XIAO ESP32C3 microcontroller, with its 400KB SRAM and robust processing capabilities, ensures stable and reliable data processing.
+- **Plug-and-Play**: All components are plug-and-play, eliminating the need for complex setups.
 
 ## Specification
 
-- Chip: D7S
-- Measurement Range: ±6g
-- Communication interface: I2C
-- Grove connector: 4-pin HY2.0
-- Operating voltage: 3.3/5V
+- **24GHz mmWave Sensor**
+  - Detection Range: Up to 30 meters
+  - Operating Frequency: 24GHz
+  - Output Interface: I2C
+  
+- **XIAO ESP32C3**
+  - Processor: ESP32C3
+  - Memory: 400KB SRAM
+  - Communication: WiFi, Bluetooth
+  - I/O Ports: Multiple GPIO
+  
+- **Grove System**
+  - Interface Types: Digital, Analog, I2C, UART
+  - Power Requirements: 3.3V or 5V
+
+- **Additional Accessories**
+  - USB Cable Length: 1.2 meters
+  - Box Dimensions: 100 x 100 x 50 mm
+  - Copper Pillars and Screws: 6mm height
 
 ## In the Box
 
-- 1 x Grove - D7S Vibration Sensor Board
-- 1 x Grove Cable(20cm)
+![](https://raw.githubusercontent.com/Longan-Labs/XIAO_MMWARE_RES/main/images/6-110061541-mmWave-Human-Detection-Sensor-Kit-fontall.jpg)
+
+This section provides a detailed list of all the components included in the Human Detection Sensor Kit.
+
+- **24GHz mmWave Sensor**: The primary sensor for human detection.
+- **Circuit Board with XIAO ESP32C3**: The control unit of the kit, pre-soldered with a XIAO ESP32C3 microcontroller that is equipped with WiFi and Bluetooth capabilities.
+- **White Box**: A casing to house the circuit board.
+- **Cross Screwdriver**: A tool for assembling the components.
+- **1.2m Type C USB Cable**: Used for programming the microcontroller board and for power supply.
+- **2 x 3M Double-Sided Tape**: For securing the white box in place.
+- **3 x 6mm Copper Pillars and 6 Small Screws**: For mounting Grove modules onto the circuit board.
+
 
 ## Applications
 
-The Grove - D7S Vibration Sensor can be used in a wide range of applications, including but not limited to:
+The Human Detection Sensor Kit is versatile and can be adapted for various application scenarios. Below are some ideas to inspire your next project:
 
-- Earthquake Monitoring Systems: Deploying the sensor in buildings, bridges, and critical infrastructure allows for real-time monitoring of seismic activities. It enables early detection and alert systems, contributing to improved safety and disaster response.
-- Seismic Research and Analysis: Researchers can utilize the Grove - D7S Vibration Sensor to collect data for seismic studies and analysis. The sensor's high-precision measurements provide valuable insights into earthquake patterns and characteristics.
-- Structural Safety Assessment: The sensor can be integrated into structural health monitoring systems to evaluate the integrity and stability of buildings, bridges, and other structures. It helps identify potential structural weaknesses caused by seismic events.
-- IoT-based Seismic Monitoring Networks: By deploying multiple Grove - D7S Vibration Sensors in a network, it is possible to create a distributed system for comprehensive seismic monitoring over a larger area. This setup enables efficient data collection and analysis for improved earthquake preparedness.
+#### Home Security
 
-These are just a few examples of the diverse applications that the Grove - D7S Vibration Sensor enables. Its versatility and high-performance make it a valuable tool in earthquake-related projects.
+- **Intruder Alert**: Use the kit to detect unauthorized entry into your home and trigger an alarm or notification.
+- **Smart Doorbell**: Integrate the kit with a camera to create a smart doorbell that only alerts you when someone is at the door.
+
+#### Commercial Applications
+
+- **Automated Access Control**: Implement the kit in office buildings or factories to control access to restricted areas.
+- **Retail Analytics**: Use the sensor to count the number of people entering and exiting a retail store for better customer analytics.
+
+#### Health Monitoring
+
+- **Elderly Care**: Use the kit to monitor the movement of elderly people in a home or care facility, alerting caregivers in case of unusual activity.
+- **Occupancy Sensing**: In hospitals, use the kit to detect whether a bed is occupied or not, helping in efficient room management.
+
+#### Industrial Automation
+
+- **Safety Monitoring**: In industrial settings, use the kit to ensure that no one enters hazardous areas without proper authorization.
+- **Resource Allocation**: Use the kit to monitor the number of workers in different areas and allocate resources more efficiently.
+
 
 ## Hardware Overview
 
