@@ -97,11 +97,12 @@ The Human Detection Sensor Kit is versatile and can be adapted for various appli
 
 ## Getting Started
 
-This "Getting Started" section aims to quickly guide you through the initial setup and basic usage of the Human Detection Sensor Kit. The circuit board of the kit comes pre-soldered with a XIAO ESP32 C3 microcontroller and a 24GHz mmWave sensor.
+This "Getting Started" section aims to quickly guide you through the initial setup and basic usage of the Human Detection Sensor Kit. The circuit board of the kit comes pre-soldered with a XIAO ESP32 C3 microcontroller and a 24GHz mmWave sensor. Due to the comprehensive documentation already available for the XIAO ESP32 C3 and 24GHz mmWave Sensor, this section will provide only a brief overview.
 
 ### How to Start
 
 1. **XIAO ESP32 C3 Setup**: Since the XIAO ESP32 C3 microcontroller is already soldered onto the circuit board, you can directly refer to the [Wiki page here](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) for setup and programming.
+
 2. **24GHz mmWave Sensor Setup**: Likewise, for setting up and using the 24GHz mmWave sensor, you can refer to the [Wiki page here](https://wiki.seeedstudio.com/Radar_MR24HPC1/).
 
 ### Points to Note
